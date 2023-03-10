@@ -1,0 +1,220 @@
+html {
+    font-size: 62.5%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body,
+input,
+textarea,
+button,
+select,
+option {
+    font-family: "Oswald", Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: .2rem;
+}
+
+body {
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: [col-1-start] 2rem 1fr 2rem [col-1-end 2rem col-2-start] 2rem 2fr 2rem [col-2-end 2rem col-3-start] 2rem 1fr 2rem [col-3-end];
+    grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 2fr [col-2-end col-3-start] 1fr [col-3-end];
+    -ms-grid-rows: [row-1-start] 2rem auto 2rem [row-1-end 2rem row-2-start] 2rem auto 2rem [row-2-end 2rem row-3-start] 2rem auto 2rem [row-3-end];
+    grid-template-rows: [row-1-start] auto [row-1-end row-2-start] auto [row-2-end row-3-start] auto [row-3-end];
+    grid-template-areas: "navigationsleisten-bereich navigationsleisten-bereich navigationsleisten-bereich"
+    ". monatslisten-bereich gesamtbilanz-bereich";
+    gap: 2rem 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+:focus {
+    border-color: #80bdff;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+    z-index: 1;
+}
+
+::placeholder,
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder {
+    color: #495057;
+}
+
+/* Buttons */
+button.standard {
+    max-width: 45rem;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    background-color: #4d8aa8;
+    border: .1rem solid #4d8aa8;
+    padding: .5rem 2rem;
+    color: #fff;
+    border-radius: 10.5rem;
+    margin: 1rem 0;
+    margin-left: 50px;
+    cursor: pointer;
+    -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    -o-transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    }
+    
+    button.standard:hover {
+    background-color: #2b6e8b;
+    border-color: #2b6e8b;
+    }
+    
+    button.standard:focus {
+    border-color: #0062cc;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, .5);
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, .5);
+    z-index: 1;
+    }
+
+
+/* Navigation */
+#navigationsleiste {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-area: navigationsleisten-bereich;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #343a40;
+    line-height: 8rem;
+}
+
+#navigationsleiste>a {
+    text-decoration: none;
+}
+#markenname {
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "Amatic SC", cursive;
+    line-height: inherit;
+    vertical-align: bottom;
+}
+
+#markenname>[class*="fa-"] {
+    font-size: 4rem;
+    vertical-align: baseline;
+    margin-right: 1rem;
+}
+
+
+.dialog-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.dialog-btn {
+    font-size: 1.2rem;
+    margin: 0 10px;
+  }
+
+
+
+/* New Aktuelles */
+.newsH1{
+    margin-left: 10%;
+}
+
+.newsFenster{
+    width: 300px;
+    overflow: auto;
+    word-break: break-all;
+    max-height: 300px;
+    margin-left: 10%;
+}
+
+/* FehlerBox */
+.fehlerbox {
+    background-color: #f8d7da;
+    color: #dc3545;
+    border: .1rem solid #f5c6cb;
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Stundenplan */
+.stundenplanDiv{
+    margin-left: 40px;
+}
+.stundenplanlistediv{
+    background-color: #565a5e;
+    width: 300px;
+    overflow: auto;
+    word-break: break-all;
+    max-height: 300px;
+}
+
+.stundenplanDialog{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+
+
+.container {
+    max-width: 900px;
+   /*white-space: nowrap; */ /* Verhindert Zeilenumbrüche innerhalb des Containers */
+   overflow-x: auto; /* Fügt eine horizontale Scroll-Leiste hinzu, wenn die Elemente breiter als der Container sind */
+   max-height: 300px;
+}
+  
+.item {
+   display: inline-block;
+   width: 200px; /* Setzt die Breite der Elemente */
+   height: 100px; /* Setzt die Höhe der Elemente */
+   margin-right: 10px; /* Fügt einen horizontalen Abstand zwischen den Elementen hinzu */
+   margin-top: 20px;
+}
+
+
+.containerforbuttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+  
+.button-row button {
+    margin: 0 10px;
+}

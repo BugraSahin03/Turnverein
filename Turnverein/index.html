@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="src/js/main.js" defer></script>
+    <script src="src/js/classes/Fehler.js" defer></script>
+    <script src="src/js/classes/Mitglieder.js" defer></script>
+    
+    <link rel="stylesheet" href="src/css/style.css"> 
+</head>
+<body>
+
+    <!-- Navigationsleise -->
+    <nav id="navigationsleiste"> 
+        <a href="#">
+            <span id="markenname">Turnverein</span>
+        </a>  
+    </nav>
+
+    <!-- New Aktuelles -->
+	<div class="column">
+        <h1 id="newsUeberschrift" class="newsH1">News & Aktuelles</h1>
+		<div id="newsEinfugen" class="newsFenster"></div>
+        <button class="standard" id="newsButtonOpen">Nachricht Hinzufügen</button>
+	</div>
+	
+    <!-- StundenPlan -->
+	<div class="column">		
+		<div class="stundenplanDiv">
+            <h1>Stundenplan</h1>
+            <div id="stundenplanEinbinden" class="container"></div>
+            <button class="standard" id="stundenplanVerwaltenButton">Verwalten</button>
+		</div>
+	</div>
+	
+	<!--Import/Export-Leiste-->
+	<div class="containerforbuttons">
+        <h1>Mitglieder</h1>
+        <div class="button-row">
+            <button class="standard" id="show">Mitglieder Hinzufügen</button>
+            <button class="standard" id="mietgliederAuflisten">Mitglieder Auflisten</button>
+        </div>
+        <div class="button-row">
+            <button class="standard" id="import-btn">Importieren</button>
+            <button class="standard" id="exportBtn">Export</button>
+        </div>
+	</div>
+	
+    <!-- Alle Mitglieder auflisten -->
+    <div>
+        <dialog id="auflistungVonMitgliedern" class="stundenplanDialog">
+            <h1 id="uberschrifftMitglieder">Alle Mitglieder</h1>
+            <section>
+                <article id="eintraegeHier"></article>   
+            </section>
+            <button class="standard" id="mietgliederAuflistenschliesen">Schliesen</button>
+        </dialog>
+    </div>
+
+    <!-- Mitglieder Hinzufügen-->
+    <div class="dialog-container"> 
+        
+        <dialog id="DialogExample" class="stundenplanDialog">     
+            <h1>Mitglieder Hinzufügen</h1>
+            <p>Füge neue Mitglieder vom Turnverein hinzu</p>
+
+            <form id="eingabeformular" action="#" method="get">
+                <label for="name" required>Name: </label>
+                <input type="text" name="name" id="name" form="eingabeformular" placeholder="z.B. Max"><br>
+
+                <label for="nachname">Nachname: </label>
+                <input type="text" name="nachname" id="nachname" form="eingabeformular" placeholder="z.B. Mustermann"><br>
+
+                <label for="geburtsdatum">Geburtsdatum: </label>
+                <input type="text" name="geburtsdatum" id="geburtsdatum" form="eingabeformular" placeholder="tt-mm-jjjj"><br>
+
+                <label for="strasse">Straße: </label>
+                <input type="text" name="strasse" id="strasse" form="eingabeformular" placeholder="z.B. Musterstrasse"><br>
+
+                <label for="hausnummer">Hausnummer: </label>
+                <input type="number" name="hausnummer" id="hausnummer" form="eingabeformular" placeholder="z.B. 56"><br>
+
+                <label for="iban">IBAN: </label>
+                <input type="text" name="iban" id="iban" form="eingabeformular" placeholder="z.B. DE99..."><br>
+                
+                <button class="standard" id="absenden" type="submit">Hinzufügen</button>
+            </form>
+
+            <button class="standard" id="hide">Schließen</button>
+        </dialog>
+
+    </div>  
+
+    <!-- News Dialog -->
+    <div>
+        <dialog id="newsDialog" class="stundenplanDialog">
+            <h1>News & Aktuelles</h1>
+            <form id="newsFormular" action="#" method="get">
+                <label for="news">News & Aktuelles:</label><br><br>
+                <textarea name="news"></textarea>
+                <button id="newsButtonSubmit" class="standard" type="submit" >Hinzufügen</button>
+            </form>
+            <button id="newsButtonClose" class="standard">Schliesen</button>
+        </dialog>
+    </div>
+
+    <!-- StundenPlan Dialog -->
+    <div>
+        <dialog id="stundenPlanDialog" class="stundenplanDialog">
+            <h1>Stundenplan Verwalten</h1>
+            <form id="formStundenplan" action="#" method="get">
+                <label for="formStundenplan"> Turn art </label>
+                <input type="text" name="sportart" id="sportart" form="formStundenplan" placeholder="z.B. Geräteturnen "><br>
+
+                <label for="formStundenplan"> Trainer </label>
+                <input type="text" name="trainer" id="trainer" form="formStundenplan"placeholder="z.B. Peter "><br>
+
+                <label for="formStundenplan"> Datum </label>
+                <input type="text" name="datum" id="datum" form="formStundenplan" placeholder="tt-mm-jjjj"><br>
+
+                <label for="formStundenplan"> Dauer </label>
+                <input type="number" name="dauer" id="dauer" form="formStundenplan" placeholder="in Minuten"><br>
+
+                <button id="stundenplanButtonHinzufuegen" class="standard" type="submit">Hinzufügen</button>
+            </form>
+            <button id="stundenplanButtonSchliesen" class="standard">Schliesen</button>
+        </dialog>
+    </div>
+ 
+   
+
+</body>
+</html>
